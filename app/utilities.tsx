@@ -13,8 +13,8 @@ interface ContextProps{
 
 
 const ContextComponent = ({children}:ContextProps)=>{
-    const contractAddress = '0x3fFD789a984849Bd2Aeaf81d8e56B7993520bC72'
-     const tokenAddress = '0xBdbd8f2C4580C17b4CE8c864348Af45fD8394894'
+    const contractAddress = '0xb0953c42d9d7A430D72c5e2756c96bAAcCF921b1'
+     const tokenAddress = '0x3F885D6a9737A0649574dA3693E54F74eB1FAC53'
      const abi = ABI;
     const [openNav, setOpenNav] = useState<any>('-9999%')
     const {writeContractAsync} = useWriteContract()
@@ -34,7 +34,7 @@ const LOCK_PERIOD_180_DAYS = 180 * 24 * 60 * 60;
 const buyToken = async(amount:number)=>{
   try{
    setIsLoad(true);
-   const usdt = '0x7770a4332bA193a2CFf9d7b7a7D3B82811C7a80b'
+   const usdt = '0x55d398326f99059fF775485246999027B3197955'
 
    if(amount <= 0){
     setResMessage("please insert a valid amount of tokens");
@@ -50,7 +50,7 @@ const buyToken = async(amount:number)=>{
   });
 
   // Wait for the approval transaction to be mined
-  const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
+  const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
   const approvalTxReceipt = await provider.waitForTransaction(approvalTxHash);
 
 
@@ -137,7 +137,7 @@ const stake = async (amount: number, lockPeriod: string) => {
     });
 
     // Wait for the approval transaction to be mined
-    const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
+    const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
     const approvalTxReceipt = await provider.waitForTransaction(approvalTxHash);
 
     if (approvalTxReceipt.status === 1) {
@@ -187,7 +187,7 @@ const stake = async (amount: number, lockPeriod: string) => {
 const unstake = async () => {
     try {
       setIsLoad(true)
-      const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
+      const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
     
         const stakeTxHash = await writeContractAsync({
           address: contractAddress,
@@ -237,7 +237,7 @@ const unstake = async () => {
     try {
         setIsLoad(true)
 
-      const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
+      const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
     
         const stakeTxHash = await writeContractAsync({
           address: contractAddress,
@@ -304,7 +304,7 @@ useEffect(()=>{
   
         try{
           
-       const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545')
+       const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc')
        const contract = new ethers.Contract(contractAddress, ABI, provider)
     
        const staked =  await contract.getTotalStaked()
@@ -322,7 +322,7 @@ useEffect(()=>{
   
         try{
           
-       const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545')
+       const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc')
        const contract = new ethers.Contract(contractAddress, ABI, provider)
     
        const stakers =  await contract.getAllStakers()
@@ -348,7 +348,7 @@ useEffect(()=>{
 useEffect(() => {
   const getStakerInfo = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider('https://data-seed-prebsc-1-s1.bnbchain.org:8545');
+      const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
       const contract = new ethers.Contract(contractAddress, ABI, provider);
 
       const stakers = await contract.viewStakerInfo(address);

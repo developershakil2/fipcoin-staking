@@ -2,14 +2,14 @@
 
 import { cookieStorage, createStorage } from '@wagmi/core'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { bscTestnet } from '@reown/appkit/networks'
+import { bsc } from '@reown/appkit/networks'
 export const projectId = '1c185a5828cca007efa9e9163db7ec63'
 
 if (!projectId) {
   throw new Error('Project ID is not defined')
 }
 
-export const networks = [bscTestnet]
+export const networks = [bsc]
 
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
