@@ -14,9 +14,9 @@ if (!projectId) {
 }
 
 const metadata = {
-  name: 'Fipcoin',
+  name: 'FIPCOIN',
   description:
-    'Discover Fipcoin, the innovative blockchain-powered platform for secure, transparent, and efficient event ticketing. Say goodbye to fraud and scalping with decentralized technology',
+    'Discover FIPCOIN, the innovative blockchain-powered platform for secure, transparent, and efficient event ticketing. Say goodbye to fraud and scalping with decentralized technology',
   url: 'https://dexticket.com',
   icons: ['https://res.cloudinary.com/dnaqaemuc/image/upload/v1737519238/cyde7xcibkd8nz0igmcz.png'],
 };

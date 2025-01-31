@@ -13,11 +13,38 @@
     --foreground: #ededed;
   }
 }
+ 
+@font-face {
+  font-family: 'rpop';
+  src: url('./fonts/poppins.regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'spop';
+  src: url('./fonts/poppins.semibold.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'mpop';
+  src:url('./fonts/poppins.medium.ttf') format('truetype');
+}
+
+
 
 body {
   color:#fff;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: rpop sans-serif;
+}
+
+h2,h3,h3{
+    font-family: spop, sans-serif;
+    font-weight:bold;
+    text-align:justify;
+}
+h1{text-align:left !important}
+p{
+  text-align:justify !important ;
 }
 
 
@@ -149,6 +176,9 @@ button[data-wallet-id="socials"] {
 
 
 @media screen and (max-width:768px){
+  body{
+    padding:0px 5px;
+  }
   #menu_items {
     position: fixed;
     width: 100%;

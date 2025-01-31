@@ -43,13 +43,13 @@ const {openNav, setOpenNav} = context
                          <li className="w-full mb-1 flex justify-center items-center md:hidden">
 
                          <div className="icon_group_nav gap-5 flex items-center justify-center">
-                         <button onClick={()=> window.location.href = '/buy'} className="bg-[#EED57B] w-[174px]  h-[54px] rounded-[20px] text-black text-[16px] font-black">Buy FIPCOIN</button>
+                         <button onClick={()=> window.location.href = '/buy'} className="bg-[#FFD77B] w-[160px]  h-[44px] rounded-lg text-black text-[16px] ">BUY FIPCOIN</button>
                
                         </div>
                          </li>
 
                          <li className="w-full  flex justify-center items-center md:hidden"> <Link  onClick={()=> setOpenNav('-999980%')}  href="/staking">
-                        <div className="w-[220px] flex justify-center text-[16px] md:text-lg items-center h-[44px] rounded-[20px] text-[#EED57B] border-[2px] border-[#EED57B]">
+                        <div className="w-[160px] flex justify-center text-[16px] md:text-lg items-center h-[44px] rounded-lg text-[#111]  bg-[#FFD77B]">
                            <span> Launch App</span>
                         </div>
                         </Link>
@@ -59,7 +59,7 @@ const {openNav, setOpenNav} = context
                           
 
                           <li className="w-full mb-10 flex justify-center items-center md:hidden">
-                          <button onClick={()=> openModal()} className="px-7 border-[2px] py-2 rounded-xl border-[#EED57B] ">{address  ? `${address?.slice(0,4)}...${address?.slice(37,42)}`:'Connect Wallet'}</button>
+                          <button onClick={()=> openModal()} className="w-[160px] text-black  py-2 rounded-lg bg-[#FFD77B] ">{address  ? `${address?.slice(0,4)}...${address?.slice(37,42)}`:'Connect Wallet'}</button>
 
                             </li>
                        </ul>
@@ -68,15 +68,15 @@ const {openNav, setOpenNav} = context
 
                    <div className="nav_end  flex justify-center gap-5 items-center">
                         <div className="icon_group_nav hidden gap-5 md:flex items-center justify-center">
-                        <button onClick={()=> window.location.href = '/buy'} className="bg-[#EED57B] w-[154px]  h-[44px] rounded-[20px] text-black text-[16px] font-black">Buy FIPCOIN</button>
+                        <button onClick={()=> window.location.href = '/buy'} className="bg-[#FFD77B] w-[154px]  h-[44px] rounded-[20px] text-black text-[16px] ">BUY FIPCOIN</button>
                
                         </div>
 
                          {
-                          isWallet === true ? <button onClick={()=> openModal()} className="px-7 py-2 rounded-xl border-[2px] border-[#EED57B]  ">{address  ? `${address?.slice(0,4)}...${address?.slice(37,42)}`:'Connect Wallet'}</button>
+                          isWallet === true ? <button onClick={()=> openModal()} className="w-[160px] text-black py-2 rounded-xl  bg-[#FFD77B]  ">{address  ? `${address?.slice(0,4)}...${address?.slice(37,42)}`:'Connect Wallet'}</button>
 
                           :     <Link  onClick={()=> setOpenNav('-999980%')}  href="/staking">
-                          <div className="w-[136px] flex justify-center text-[16px] md:text-lg items-center h-[44px] rounded-[20px] text-[#EED57B] border-[2px] border-[#EED57B]">
+                          <div className="w-[136px] flex justify-center text-[16px] md:text-lg items-center h-[44px] rounded-lg text-[#111] bg-[#FFD77B]">
                              <span> Launch App</span>
                           </div>
                           </Link>

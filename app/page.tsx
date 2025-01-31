@@ -40,21 +40,21 @@ export default function Home() {
         </div>
          
          
-            <div className="hero_left w-full md:w-[50%] py-10 flex justify-center md:justify-start items-center md:items-start flex-col">
-                <div className="hero_title_wrapper mt-16 md:mt-0 w-full px-2 md:w-[full]">
+            <div className="hero_left w-full md:w-[50%] py-3 md:py-10 flex justify-center md:justify-start items-center md:items-start flex-col">
+                <div className="hero_title_wrapper mt-16 md:mt-0 w-full md:w-[full]">
                 <h1 className="text-[#fff]  leading-[105%] font-black text-4xl text-center md:text-left md:text-[55px]">
-               Fipcoin The Future of Crypto 
+                FIPCOIN The Future of Crypto 
                </h1>
-               <h1 className="text-[#EED57B] text-4xl text-center md:text-left md:text-[55px] font-black leading-[105%]">Powered by BSC Network</h1>
+               <h1 className="text-[#FFD77B] text-4xl text-center md:text-left md:text-[55px] font-black leading-[105%]">Powered by BSC Network</h1>
                 </div>
-                 <p className="text-center mt-5 md:text-start text-[20px] text-[#fff]">
-                 Step into the future of finance with Fipcoin—where cutting-edge technology and trust converge on the BSC Network
-                 </p>  
+                 <h6 className="text-justify mt-5 md:text-start text-[20px] text-[#fff]">
+                 Step into the future of finance with FIPCOIN where cutting-edge technology and trust converge on the BSC Network
+                 </h6>  
 
-                 <div className="flex mt-5 gap-3 w-full md:w-[390px] btn_group px-4 md:px-0 justify-between items-center h-[54px]">
-                  <button onClick={()=> window.location.href = '/staking'} className="bg-[#EED57B] w-[174px]  h-[54px] rounded-[20px] text-black text-[16px] font-black">Stake Fipcoin</button>
+                 <div className="flex mt-5 gap-3 w-full md:w-[390px] btn_group  md:px-0 justify-between items-center h-[54px]">
+                  <button onClick={()=> window.location.href = '/staking'} className="bg-[#FFD77B] w-[184px]  h-[54px] rounded-lg text-black text-[16px] ">Stake FIPCOIN</button>
                
-                 <button onClick={()=> window.location.href = '/buy'}  className="bg-transparent border-[2px] border-[#EED57B] w-[184px]  h-[54px] rounded-[20px] text-[#fff]  text-[16px] ">Buy Fipcoin</button>
+                 <button onClick={()=> window.location.href = '/buy'}  className="  bg-[#FFD77B] w-[184px]  h-[54px] rounded-lg text-[#111]   text-[16px] ">Buy FIPCOIN</button>
                 
                  </div>
 
@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         
         <div className="container px-2 my-[60px] mx-auto flex-col flex justify-center items-center ">
-            <p className="text-center text-[17px] md:text-[21px] text-[#EED57B]"> Secure, decentralized, transparent</p>
+            <p className="text-center text-[17px] md:text-[21px] text-[#FFD77B]"> Secure, decentralized, transparent</p>
             <p className="text-white text-[17px] md:text-[21px] text-center my-1"> Copy FIPCOIN Address </p>
             <button onClick={
              ()=>  navigator.clipboard.writeText('0x3F885D6a9737A0649574dA3693E54F74eB1FAC53')
@@ -74,7 +74,7 @@ export default function Home() {
                .catch((err) => {
                  console.error('Failed to copy text: ', err);
                })
-            } className="bg-[#EED57B] w-[174px]  flex justify-center items-center h-[54px] rounded-[20px] text-black text-[16px] font-black">
+            } className="bg-[#FFD77B] w-[174px]  flex justify-center items-center h-[54px] rounded-[20px] text-black text-[16px] font-black">
               {
                 copy === true ?
                 <p>Copied</p>:
@@ -148,22 +148,22 @@ export default function Home() {
             <div className="right w-full md:w-[50%] py-10 flex justify-center md:justify-start items-center md:items-start flex-col">
                 <div className="hero_title_wrapper mt-16 md:mt-0 w-full  md:w-[full]">
                
-               <h2 className="text-[#EED57B] text-3xl text-left  md:text-[40px] font-black leading-[105%]">Fipcoin Vision for the Future</h2>
+               <h2 className="text-[#FFD77B] text-3xl text-left  md:text-[40px] font-black leading-[105%]">FIPCOIN Vision for the Future</h2>
                 </div>
                  <p className="text-left md:text-justify mt-5  text-[20px] text-[#fff] ">
-                 <span className="text-[#EED57B] my-2">Fipcoin is not just a token</span> it is a movement to bring the best aspects of Bitcoin to the BSC Network. Our vision includes
+                 <span className="text-[#FFD77B] my-2">FIPCOIN is not just a token</span> it is a movement to bring the best aspects of Bitcoin to the BSC Network. Our vision includes
                  </p>
                  <p className="text-left md:text-justify mt-5  text-[20px] text-[#fff] ">
-                 <span className="text-[#EED57B] my-2">Widespread Adoption </span> 
-                 By leveraging Base's capabilities, Fipcoin aims to become a leading cryptocurrency for both retail and institutional investors.
+                 <span className="text-[#FFD77B] my-2">Widespread Adoption </span> 
+                 By leveraging Base's capabilities, FIPCOIN aims to become a leading cryptocurrency for both retail and institutional investors.
                  </p>
                  <p className="text-left md:text-justify mt-5  text-[20px] text-[#fff] ">
-                 <span className="text-[#EED57B] my-2">Innovative Use Cases </span> 
-                 From decentralized finance (DeFi) to cross-border payments, Fipcoin will explore and develop a wide range of applications, driving utility and value.
+                 <span className="text-[#FFD77B] my-2">Innovative Use Cases </span> 
+                 From decentralized finance (DeFi) to cross-border payments, FIPCOIN will explore and develop a wide range of applications, driving utility and value.
                  </p>
                  <p className="text-left md:text-justify mt-5  text-[20px] text-[#fff] ">
-                 <span className="text-[#EED57B] my-2">Building a Vibrant and Engaged Community of Users </span> 
-                 At Fipcoin (FIPCOIN), we believe that a strong, active community is the backbone of any successful cryptocurrency project. Our goal is to cultivate a vibrant and engaged community of users who are passionate about the mission and growth of Fipcoin
+                 <span className="text-[#FFD77B] my-2">Building a Vibrant and Engaged Community of Users </span> 
+                 At FIPCOIN (FIPCOIN), we believe that a strong, active community is the backbone of any successful cryptocurrency project. Our goal is to cultivate a vibrant and engaged community of users who are passionate about the mission and growth of Fipcoin
                  </p>
 
 
@@ -176,11 +176,11 @@ export default function Home() {
 
 
         <div className="py-[100px] md:py-[200px] container flex justify-center items-center flex-col mx-auto ">
-            <h2 className="text-[#EED57B] text-4xl text-[45px] text-center">Our Commitment</h2>
+            <h2 className="text-[#FFD77B] text-4xl text-[45px] text-center">Our Commitment</h2>
             <div className="w-full px-2 md:w-[360px]  mt-5">
-              <p className="text-[20px] text-center">
+              <h6 className="text-[20px] text-center">
               Groundbreaking token project inspired by Bitcoin's principles of trust and scarcity on BSC Network.
-              </p>
+              </h6>
             </div>
         </div>
         
@@ -191,20 +191,20 @@ export default function Home() {
                 <div className="hero_title_wrapper mt-16 md:mt-0 w-full  md:w-[full]">
                
                <h2 className="text-[#ffffff] text-3xl text-left  md:text-[40px] font-black leading-[105%]">
-               Pioneering Decentralization <span className="text-[#EED57B] ">and Trust</span>
+               Pioneering Decentralization <span className="text-[#FFD77B] ">and Trust</span>
                </h2>
                 </div>
                  <p className="text-left mt-5  text-[16px] text-[#fff] ">
-                 At Fipcoin, we are dedicated to advancing the principles of decentralization and trust. We believe in the power of community-driven initiatives, ensuring that every decision, upgrade, and feature aligns with the needs and desires of our users.
+                 At FIPCOIN, we are dedicated to advancing the principles of decentralization and trust. We believe in the power of community-driven initiatives, ensuring that every decision, upgrade, and feature aligns with the needs and desires of our users.
                  </p>
-                 <h3 className="text-[#EED57B] text-left w-full font-black  mt-5 text-xl">Unwavering Security and Stability</h3>
+                 <h3 className="text-[#FFD77B] text-left w-full font-black  mt-5 text-xl">Unwavering Security and Stability</h3>
                  <p className="text-left md:text-justify   text-[16px] text-[#fff] ">
-                 Security is at the heart of Fipcoin. With a renounced contract and burned liquidity, we commit to creating a stable and secure environment that you can trust. Our platform is designed to provide long-term reliability, safeguarding your assets in an ever-evolving digital landscape.
+                 Security is at the heart of FIPCOIN. With a renounced contract and burned liquidity, we commit to creating a stable and secure environment that you can trust. Our platform is designed to provide long-term reliability, safeguarding your assets in an ever-evolving digital landscape.
                  </p>
               
-                 <h3 className="text-[#EED57B] text-left w-full font-black  mt-5 text-xl">Empowering the Future of Finance</h3>
+                 <h3 className="text-[#FFD77B] text-left w-full font-black  mt-5 text-xl">Empowering the Future of Finance</h3>
                  <p className="text-left md:text-justify   text-[16px] text-[#fff] ">
-                 Combining the foundational strengths of Bitcoin with the innovative potential of the BSC Network, Fipcoin is more than just a cryptocurrency. It’s a movement towards a more transparent, scalable, and inclusive financial future, where the community leads the way.
+                 Combining the foundational strengths of Bitcoin with the innovative potential of the BSC Network, FIPCOIN is more than just a cryptocurrency. It’s a movement towards a more transparent, scalable, and inclusive financial future, where the community leads the way.
                  </p>
               
 
@@ -242,7 +242,7 @@ export default function Home() {
                 <div className="hero_title_wrapper mt-16 md:mt-0 w-full  md:w-[full]">
                
                <h2 className=" text-3xl text-center md:text-left  md:text-[40px] font-black leading-[105%]">
-               Get Rewards <span className="text-[#EED57B]">Every 60 Minutes</span> / 24 Times 
+               Get Rewards <span className="text-[#FFD77B]">Every 60 Minutes</span> / 24 Times 
                  Daily
                </h2>
                 </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 A simple,stable and predictable way to earn passive income
                 </p>
                 <a href="/buy">
-                <button className="w-[200px] h-[68px] rounded-[20px] border-[2px] border-[#EED57B] mt-3">GET FIPCOIN TOKEN</button>
+                <button className="w-[150px] h-[48px] text-black font-black rounded-[10px] bg-[#FFD77B] mt-3">GET FIPCOIN</button>
                 </a>
                 
                 
@@ -281,7 +281,7 @@ export default function Home() {
                 </h2>
 
                <h2 className=" text-3xl text-left  md:text-[30px] mt-[40px] font-black leading-[105%]">
-               Combining <span className="text-[#EED57B]">auto-staking</span> and counponding 
+               Combining <span className="text-[#FFD77B]">auto-staking</span> and counponding 
                </h2>
                 </div>
               

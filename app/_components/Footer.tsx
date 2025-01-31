@@ -20,7 +20,7 @@ const Footer = ()=>{
                    <div className="nav_left w-full md:w-[50%] flex md:block md:justify-center items-center md:flex-col flex-row">
                 
                       
-                    <button onClick={()=> window.location.href = '/buy'} className="border-[#EED57B] border-[2px] flex items-center justify-center w-[154px] mr-3 h-[44px] rounded-[20px] text-white text-[16px] font-black">
+                    <button onClick={()=> window.location.href = '/buy'} className="border-[#FFD77B] border-[2px] flex items-center justify-center w-[154px] mr-3 h-[44px] rounded-[20px] text-white text-[16px] font-black">
                     <ReuseImage height={18} width={18} cl="w-[18px] h-[18px] mr-1 rounded-full" src={Logo} alt="logo"/>
                    
                      <span>Buy FIPCOIN
@@ -44,10 +44,10 @@ const Footer = ()=>{
 
 
                       <div className="">
-                      <button onClick={()=> window.location.href = 'https://fipnext.com'} className="bg-[#EED57B] w-[154px] mr-3 h-[44px] rounded-[20px] text-black text-[16px] font-black">FIPCOIN</button>
+                      <button onClick={()=> window.location.href = 'https://fipnext.com'} className="bg-[#FFD77B] w-[154px] mr-3 h-[44px] rounded-[20px] text-black text-[16px] font-black">FIPNEXT</button>
 
                            
-              <button onClick={()=> window.location.href = 'https://fipcoin.ai'} className="bg-[#EED57B] w-[154px]  h-[44px] rounded-[20px] text-black text-[16px] font-black">FIPNEXT</button>
+              <button onClick={()=> window.location.href = 'https://fipcoin.ai'} className="bg-[#FFD77B] w-[154px]  h-[44px] rounded-[20px] text-black text-[16px] font-black">FIPCOIN</button>
 
 
 

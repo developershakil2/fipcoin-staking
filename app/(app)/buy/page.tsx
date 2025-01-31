@@ -91,10 +91,10 @@ const buyTokenFunc = (e:any)=>{
 
                     <div className="">
                    
-                   <input onChange={ buyTokenFunc} className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#EED57B] rounded-xl py-3 px-4 font-black text-3xl" type="number" placeholder="0.0"/>
+                   <input onChange={ buyTokenFunc} className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#FFD77B] rounded-xl py-3 px-4 font-black text-3xl" type="number" placeholder="0.0"/>
                 </div>
 
-                <div className="bg-[#EED57B] w-[130px] flex justify-center items-center text-black font-black py-2 px-5 rounded-lg">
+                <div className="bg-[#FFD77B] w-[130px] flex justify-center items-center text-black font-black py-2 px-5 rounded-lg">
                         USDT  <ReuseImage src={USDT} height={25} width={25} alt="log" cl="logo ml-1"/>
                 </div>
                      
@@ -112,10 +112,10 @@ const buyTokenFunc = (e:any)=>{
 
                     <div className="">
                    
-                   <input value={amount} disabled className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#EED57B] rounded-xl py-3 px-4 font-black text-3xl"  placeholder="0.0"/>
+                   <input value={amount} disabled className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#FFD77B] rounded-xl py-3 px-4 font-black text-3xl"  placeholder="0.0"/>
                 </div>
 
-                <div className="border-[#EED57B] w-[130px] border-[2px] flex justify-center items-center text-[#EED57B] font-black py-2 px-5 rounded-lg">
+                <div className="border-[#FFD77B] w-[130px] border-[2px] flex justify-center items-center text-[#FFD77B] font-black py-2 px-5 rounded-lg">
                         FIPCOIN  <ReuseImage src={LogoImg} height={25} width={25} alt="log" cl="logo ml-1"/>
                 </div>
                      
@@ -132,8 +132,8 @@ const buyTokenFunc = (e:any)=>{
                    <div className=" flex justify-end items-center mt-5">
                     
                      {
-                        address ? <button onClick={()=> BuyToken()} className="bg-[#EED57B] text-black font-black hover:bg-black hover:border-black hover:text-white  border-[2px] border-[#EED57B] rounded-xl px-10 py-2">BUY</button>:
-                  <button onClick={()=> openModal()} className="px-7 py-2 rounded-xl border-[#EED57B]  border-[2px] ">Connect Wallet</button>
+                        address ? <button onClick={()=> BuyToken()} className="bg-[#FFD77B] text-black font-black hover:bg-black hover:border-black hover:text-white  border-[2px] border-[#FFD77B] rounded-xl w-[160px] py-2">BUY</button>:
+                  <button onClick={()=> openModal()} className=" py-2 w-[160px] rounded-xl bg-[#FFD77B]  text-black">Connect Wallet</button>
                   
                   }
                    </div>
