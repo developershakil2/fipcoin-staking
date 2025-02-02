@@ -265,12 +265,12 @@ const Staking = async()=>{
                   <div className="wrapper mt-10">
                        <div className="inner_wrapper">
                            <h2 className="font-black flex items-center text-xl md:text-3xl text-left"><span className="font-black text-gray-500 text-xl  "><div className="w-[40px] h-[40px] flex justify-center items-center rounded-full bg-[#FFD77B]">1</div></span> <span className="ml-4 ">Don't have FIPCOIN Tokens?</span></h2>
-                             <p className="">Get <span className="text-[#FFD77B] ">FIPCOIN Tokens</span></p>
+                             Get <span className="text-[#FFD77B] "><a href="https://fipcoin.ai" target="_blank">FIPCOIN</a> </span>
                       </div>
 
                       <div className="inner_wrapper my-6">
                            <h2 className="font-black text-xl md:text-3xl flex items-center text-left"><div className="font-black text-gray-500 text-xl w-[40px] h-[40px] flex justify-center items-center rounded-full bg-[#FFD77B]">2</div> <span className="ml-4 ">Stake</span></h2>
-                             <p className=""> <span className="text-[#FFD77B] ">Stake your FIPCOIN Tokens</span></p>
+                             <p className=""> <span className="text-[#FFD77B] ">Stake your <a href="https://fipcoin.ai" target="_blank">FIPCOIN</a></span></p>
                       </div>
 
                       <div className="inner_wrapper">
@@ -278,7 +278,7 @@ const Staking = async()=>{
                            Unstake your Rewards
                               </span></h2>
                              <h6 className=""> <span className="text-[#FFD77B] ">
-                             Unstake your FIPCOIN Tokens and Withdraw to your Wallet
+                             Unstake your <a href="https://fipcoin.ai" target="_blank">FIPCOIN</a> and Withdraw to your Wallet
                               </span></h6>
                       </div>
                   </div>

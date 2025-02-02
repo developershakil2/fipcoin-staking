@@ -47,7 +47,7 @@ export default function Home() {
                </h1>
                <h1 className="text-[#FFD77B] text-4xl text-center md:text-left md:text-[55px] font-black leading-[105%]">Powered by BSC Network</h1>
                 </div>
-                 <h6 className="text-justify mt-5 md:text-start text-[20px] text-[#fff]">
+                 <h6 className="text-justify mt-5 md:text-start text-[16px] md:text-[20px] text-[#fff]">
                  Step into the future of finance with FIPCOIN where cutting-edge technology and trust converge on the BSC Network
                  </h6>  
 
@@ -64,7 +64,7 @@ export default function Home() {
         
         <div className="container px-2 my-[60px] mx-auto flex-col flex justify-center items-center ">
             <p className="text-center text-[17px] md:text-[21px] text-[#FFD77B]"> Secure, decentralized, transparent</p>
-            <p className="text-white text-[17px] md:text-[21px] text-center my-1"> Copy FIPCOIN Address </p>
+            <p className="text-white text-[17px] md:text-[21px] text-center "> Copy FIPCOIN Address </p>
             <button onClick={
              ()=>  navigator.clipboard.writeText('0x3F885D6a9737A0649574dA3693E54F74eB1FAC53')
                .then(() => {
@@ -74,7 +74,7 @@ export default function Home() {
                .catch((err) => {
                  console.error('Failed to copy text: ', err);
                })
-            } className="bg-[#FFD77B] w-[174px]  flex justify-center items-center h-[54px] rounded-[20px] text-black text-[16px] font-black">
+            } className="bg-[#FFD77B] w-[174px]  mt-3 flex justify-center items-center h-[54px] rounded-[20px] text-black text-[16px] font-black">
               {
                 copy === true ?
                 <p>Copied</p>:
@@ -95,15 +95,15 @@ export default function Home() {
             <div className="mobile_responsive  md:w-[50%] gap-2 w-full px-4 flex justify-around items-center">
             <div className="w-[50%] my-3  md:w-[25%] px-3 py-3 bg-slate-800 md:bg-transparent rounded-xl flex justify-start md:justify-center items-center">
                  <ReuseImage src={Chart} height={50} width={50} alt="chart_image" cl=""/>
-                 <p className="ml-2">Sustaionable<br/>
-                 Growth</p>
+                 <span className="ml-2 text-[12px] md:text-[16px]">Sustaionable<br/>
+                 Growth</span>
 
               </div>
 
               <div className="w-[50%] my-3  md:w-[25%] px-3 py-3 flex bg-slate-800 md:bg-transparent rounded-xl justify-start md:justify-center items-center">
                  <ReuseImage src={Down} height={50} width={50} alt="chart_image" cl=""/>
-                 <p className="ml-2">Attractive<br/>
-                 APY</p>
+                 <span className="ml-2 text-[12px] md:text-[16px]">Attractive<br/>
+                 APY</span>
 
               </div>
             </div>
@@ -114,15 +114,15 @@ export default function Home() {
 
             <div className="w-[50%] my-3  md:w-[25%] px-3 py-3 flex bg-slate-800 md:bg-transparent rounded-xl justify-start md:justify-center items-center">
                  <ReuseImage src={User} height={50} width={50} alt="chart_image" cl=""/>
-                 <p className="ml-2">Auto<br/>
-                 Reinvesting</p>
+                 <span className="ml-2 text-[12px] md:text-[16px]">Auto<br/>
+                 Reinvesting</span>
 
               </div>
 
               <div className="w-[50%] my-3  md:w-[25%] px-3 py-3 flex justify-start bg-slate-800 md:bg-transparent rounded-xl md:justify-center items-center">
                  <ReuseImage src={Target} height={50} width={50} alt="chart_image" cl=""/>
-                 <p className="ml-2">Anti<br/>
-                 Dump</p>
+                 <span className="ml-2 text-[12px] md:text-[16px]">Anti<br/>
+                 Dump</span>
 
               </div>
 
@@ -194,15 +194,15 @@ export default function Home() {
                Pioneering Decentralization <span className="text-[#FFD77B] ">and Trust</span>
                </h2>
                 </div>
-                 <p className="text-left mt-5  text-[16px] text-[#fff] ">
+                 <p className=" mt-5  text-[16px] text-[#fff] ">
                  At FIPCOIN, we are dedicated to advancing the principles of decentralization and trust. We believe in the power of community-driven initiatives, ensuring that every decision, upgrade, and feature aligns with the needs and desires of our users.
                  </p>
-                 <h3 className="text-[#FFD77B] text-left w-full font-black  mt-5 text-xl">Unwavering Security and Stability</h3>
+                 <h3 className="text-[#FFD77B]  w-full font-black  mt-5 text-xl">Unwavering Security and Stability</h3>
                  <p className="text-left md:text-justify   text-[16px] text-[#fff] ">
                  Security is at the heart of FIPCOIN. With a renounced contract and burned liquidity, we commit to creating a stable and secure environment that you can trust. Our platform is designed to provide long-term reliability, safeguarding your assets in an ever-evolving digital landscape.
                  </p>
               
-                 <h3 className="text-[#FFD77B] text-left w-full font-black  mt-5 text-xl">Empowering the Future of Finance</h3>
+                 <h3 className="text-[#FFD77B]  w-full font-black  mt-5 text-xl">Empowering the Future of Finance</h3>
                  <p className="text-left md:text-justify   text-[16px] text-[#fff] ">
                  Combining the foundational strengths of Bitcoin with the innovative potential of the BSC Network, FIPCOIN is more than just a cryptocurrency. It’s a movement towards a more transparent, scalable, and inclusive financial future, where the community leads the way.
                  </p>

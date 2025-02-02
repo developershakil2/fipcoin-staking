@@ -68,7 +68,7 @@ const {openNav, setOpenNav} = context
 
                    <div className="nav_end  flex justify-center gap-5 items-center">
                         <div className="icon_group_nav hidden gap-5 md:flex items-center justify-center">
-                        <button onClick={()=> window.location.href = '/buy'} className="bg-[#FFD77B] w-[154px]  h-[44px] rounded-[20px] text-black text-[16px] ">BUY FIPCOIN</button>
+                        <button onClick={()=> window.location.href = '/buy'} className="bg-[#FFD77B] w-[154px]  h-[44px] rounded-lg text-black text-[16px] ">BUY FIPCOIN</button>
                
                         </div>
 

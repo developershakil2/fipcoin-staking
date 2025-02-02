@@ -15,7 +15,7 @@ const Footer = ()=>{
 
     return(
         <>
-          <div className="w-full bg-[#1E5267]  py-10 flex mt-[130px] justify-start md:justify-center items-center">
+          <div className="w-full bg-[#34343577]  py-10 flex mt-[130px] justify-start md:justify-center items-center">
              <div className="container mx-auto flex justify-start md:justify-between items-center h-[85px] flex-col md:flex-row">
                    <div className="nav_left w-full md:w-[50%] flex md:block md:justify-center items-center md:flex-col flex-row">
                 
@@ -28,8 +28,8 @@ const Footer = ()=>{
                       </button>
 
                       <div className="">
-                      <p className="text-[15px]">Secure and Decentralizied
-                    </p>
+                      <span className="text-[15px] text-start ">Secure and Decentralizied
+                    </span>
                     <p className="text-[15px]">Financial Ecosystem</p>
                   
                       </div>
