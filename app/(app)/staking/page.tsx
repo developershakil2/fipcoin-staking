@@ -71,8 +71,6 @@ const Staking = async()=>{
     }
 
 
-
-
         <Nav isWallet={true}/>
 
 
@@ -109,7 +107,7 @@ const Staking = async()=>{
                </div>
 
                <div className=" flex justify-end items-center mt-5">
-               <select onChange={(e)=>setDuration(e.target.value)} className="bg-transparent w-[161px] outline-none ">
+               <select onChange={(e)=>setDuration(e.target.value)} className="bg-transparent w-[191px] outline-none ">
                         <option className=" text-lg font-black bg-black outline-none text-center" >Select Lock Duration</option>
                         <option value={60} className=" text-lg font-black bg-black outline-none" >60 days 4% FIPCOIN Rewards</option>
                         <option value={90} className=" text-lg font-black bg-black outline-none" >90 days 7% FIPCOIN Rewards</option>
@@ -133,7 +131,7 @@ const Staking = async()=>{
 <div className="bg-black/50 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg px-4 mt-4 py-6">
 <div className="w-full flex justify-between items-center">
                 <h2 className="font-black text-2xl ">Unstake</h2>
-                <h2 className="font-black text-xs text-end">early withdraw 5% penelty from rewards</h2>
+                <h2 className="font-black text-[10px] md:text-xs text-end">early withdraw 5% penelty from rewards</h2>
                 </div>
 <div className="mt-4 w-full flex justify-between items-center">
     <div className="left_inner">
@@ -147,7 +145,7 @@ const Staking = async()=>{
 
     {
          address ? <button onClick={()=> unstake()} className="bg-[#FFD77B]  font-black hover:bg-white hover:border-black hover:text-black  border-[2px] border-[#FFD77B] text-black rounded-xl w-[160px] py-2">Unstake</button>:
-         <button onClick={()=> openModal()} className="px-5 py-2 rounded-lg text-black bg-[#FFD77B] ">Connect Wallet</button>
+         <button onClick={()=> openModal()} className="px-2 py-2 rounded-lg text-black bg-[#FFD77B] ">Connect Wallet</button>
                   
       }
    
