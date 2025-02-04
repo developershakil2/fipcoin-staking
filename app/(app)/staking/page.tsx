@@ -223,18 +223,18 @@ const Staking = async()=>{
                    <h2 className="w-full text-center font-black text-2xl "> Staking Rewards</h2>
                    <div className="mt-4 w-full">
                       <div className="w-full my-3 flex justify-between items-center ">
-                         <p>60 Days </p>
-                         <p>4% FIPCOIN Rewards</p>
-                      </div>
-
-                      <div className="w-full my-3 flex justify-between items-center ">
                          <p>90 Days </p>
-                         <p>7% FIPCOIN Rewards</p>
+                         <p>1% FIPCOIN Rewards</p>
                       </div>
 
                       <div className="w-full my-3 flex justify-between items-center ">
                          <p>180 Days </p>
-                         <p>16% FIPCOIN Rewards</p>
+                         <p>1% FIPCOIN Rewards</p>
+                      </div>
+
+                      <div className="w-full my-3 flex justify-between items-center ">
+                         <p>360 Days </p>
+                         <p>1% FIPCOIN Rewards</p>
                       </div>
                        
                        <div className="mt-4 h-[2px] bg-white ">
