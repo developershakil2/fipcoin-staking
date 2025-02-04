@@ -24,11 +24,6 @@ const ContextComponent = ({children}:ContextProps)=>{
 
   
 
-// Constants for lock periods in seconds (since "60 days" translates to seconds)
-const LOCK_PERIOD_60_DAYS = 60 * 24 * 60 * 60;
-const LOCK_PERIOD_90_DAYS = 90 * 24 * 60 * 60;
-const LOCK_PERIOD_180_DAYS = 180 * 24 * 60 * 60;
-
 
 
 const buyToken = async(amount:number)=>{
@@ -112,22 +107,21 @@ const stake = async (amount: number, lockPeriod: string) => {
 
     const amountInFormat = ethers.utils.parseEther(String(amount));
 
-    // Convert the selected lock period to seconds
     let selectedLockPeriod: number;
     switch (lockPeriod) {
-      case '60':
-        selectedLockPeriod = LOCK_PERIOD_60_DAYS
-        break;
       case '90':
-        selectedLockPeriod = LOCK_PERIOD_90_DAYS
+        selectedLockPeriod = 90; // ✅ Matches smart contract
         break;
       case '180':
-        selectedLockPeriod = LOCK_PERIOD_180_DAYS
+        selectedLockPeriod = 180; // ✅ Matches smart contract
+        break;
+      case '360':
+        selectedLockPeriod = 360; // ✅ Matches smart contract
         break;
       default:
         throw new Error('Invalid lock period selected');
     }
-
+    
     // Approve tokens first
     const approvalTxHash = await writeContractAsync({
       address: tokenAddress,
@@ -135,6 +129,9 @@ const stake = async (amount: number, lockPeriod: string) => {
       functionName: 'approve',
       args: [contractAddress, amountInFormat],
     });
+
+    console.log('Lock Period Sent:', selectedLockPeriod);
+
 
     // Wait for the approval transaction to be mined
     const provider = new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/bsc');
@@ -146,7 +143,7 @@ const stake = async (amount: number, lockPeriod: string) => {
         address: contractAddress,
         abi: abi,
         functionName: 'stake',
-        args: [amountInFormat, selectedLockPeriod], // Pass the staked amount and the lock period in seconds
+        args: [amountInFormat, ethers.utils.parseEther(String(selectedLockPeriod))], // Pass the staked amount and the lock period in seconds
       });
 
       const stakeTxReceipt = await provider.waitForTransaction(stakeTxHash);

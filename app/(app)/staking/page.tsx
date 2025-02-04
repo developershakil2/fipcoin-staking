@@ -109,9 +109,9 @@ const Staking = async()=>{
                <div className=" flex justify-end items-center mt-5">
                <select onChange={(e)=>setDuration(e.target.value)} className="bg-transparent w-[191px] outline-none ">
                         <option className=" text-lg font-black bg-black outline-none text-center" >Select Lock Duration</option>
-                        <option value={60} className=" text-lg font-black bg-black outline-none" >60 days 4% FIPCOIN Rewards</option>
-                        <option value={90} className=" text-lg font-black bg-black outline-none" >90 days 7% FIPCOIN Rewards</option>
-                        <option value={180} className=" text-lg font-black bg-black outline-none" >180 days 16% FIPCOIN Rewards</option>
+                        <option value={90} className=" text-lg font-black bg-black outline-none" >90 days 1% FIPCOIN Rewards</option>
+                        <option value={180} className=" text-lg font-black bg-black outline-none" >180 days 1% FIPCOIN Rewards</option>
+                        <option value={360} className=" text-lg font-black bg-black outline-none" >360 days 1% FIPCOIN Rewards</option>
                      </select>
                    </div>
                    <div className=" flex justify-end items-center mt-5">
