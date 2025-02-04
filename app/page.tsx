@@ -607,18 +607,18 @@ We invest your funds in our own crypto high-frequency trading systems where all 
 
 
 
-                     <button onClick={()=> setF14(!f14)} className="w-full my-3 transition-all flex-col md:w-[740px]  flex justify-start items-start">
+                     <button onClick={()=> setF15(!f15)} className="w-full my-3 transition-all flex-col md:w-[740px]  flex justify-start items-start">
                           <div className="flex w-full  items-start justify-start">
                              <div className=" rounded-full h-[25px] flex justify-center items-center w-[25px] bg-[#FFD77B] text-black">
                                 {
-                                  f14 === false ?
+                                  f15 === false ?
                                  <span className="w-[25px] h-[25px] ">+</span>:<span className="w-[25px] h-[25px] ">-</span>
                                 }
                              </div>
                              <h2 className="text-[19px] md:text-2xl font-black ml-2 -mt-0 md:-mt-1">How the monthly payments weill be made?</h2>
                           </div>
                            {
-                            f14 === true ? 
+                            f15 === true ? 
                             <h5 className="mt-3 text-start transition-all ">
                          All the payments are being paid on a monthly basis to your given bank accounts automatically on fixed dates that are mentioned in your contact by our banking & payment partners as we regularly do in our main platforms and no taxes will be deducted for the Investments below 5 Lakhs. If the volume of investment is above Rs. 5 lacs, then the TDS provisions of Income Tax will be applicable.
                            </h5>:''
