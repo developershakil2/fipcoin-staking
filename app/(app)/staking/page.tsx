@@ -1,38 +1,88 @@
 "use client"
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Footer from "@/app/_components/Footer"
 import Nav from "@/app/_components/Nav"
 import ReuseImage from "@/app/_components/ReuseImage"
 import ConnectButton from "@/app/Connect"
 import LogoImg from '@/app/images/logo.png'
 import Loading from '@/app/images/loading.gif'
-import { useState } from "react"
+
 import { useAccount } from "wagmi"
 import {API} from '@/app/utilities'
 import { ethers } from 'ethers'
 import {openModal} from "../../WalletProvider"
 
 const Tokenomics = ()=>{
+
+
+
  
  const {address} = useAccount()
  const [sstake, setSstake] = useState<boolean>(true)
 const  [tabActive, setTabActive] = useState<boolean>(true)
 const [inactiveTab, setInactiveTab] = useState<boolean>(false)
 const [amount, setAmount] = useState<any>()
-const [duration, setDuration] = useState<any>()
+const [duration, setDuration] = useState<any>(360)
 
 
 const context = useContext(API)
 if(!context){
    throw new Error("error from staking context")
 }
-const {stake, totalStaked, stakers, unstake, earlyWithdraw, isLoad, resMessage, setResMessage, stakerIn} = context;
+const {stake, totalStaked, stakers, unstake, earlyWithdraw, isLoad, resMessage,stakerInfo, setResMessage} = context;
   
+const [stakerIn, setStakerIn] = useState<any>({
+  stake:'',
+  reward:'',
+  lock:'',
+  remaining:''
+
+})
+
+
+
+
+
+useEffect(() => {
+   if (
+       stakerInfo &&
+       stakerInfo.stakedAmount !== undefined &&
+       stakerInfo.rewardAmount !== undefined &&
+       stakerInfo.lockPeriod !== undefined &&
+       stakerInfo.timeRemaining !== undefined
+      
+   ) {
+       // Convert BigNumber values to regular numbers (or formatted string) 
+       const stakedAmount = ethers.utils.formatUnits(stakerInfo.stakedAmount, 18);  // In ether
+       const rewardAmount = ethers.utils.formatUnits(stakerInfo.rewardAmount, 18);  // In ether
+       const lockPeriodInDays = ethers.utils.formatUnits(stakerInfo.lockPeriod, 18); // Convert seconds to days
+
+       const remainingInDays = ethers.utils.formatUnits(stakerInfo.timeRemaining, 18);
+
+       console.log('stakedAmount:', stakedAmount); // logs in ether
+       console.log('rewardAmount:', rewardAmount); // logs in ether
+       console.log('lockPeriodInDays:', lockPeriodInDays.toString()); // logs in days (calculated)
+       console.log('remainingInDays:', remainingInDays); // logs remaining time in days
+
+       // Now set the values to state
+       setStakerIn({
+           stake: Number(stakedAmount).toFixed(2),  // This should show the staked amount in ether
+           reward: Number(rewardAmount).toFixed(2), // This should show the reward amount in ether
+           lock: Number(lockPeriodInDays).toFixed(0),  // This should show the lock period in days
+           remaining: Math.floor(Number(remainingInDays)).toFixed(0),  // This should show remaining time in days
+       });
+   }
+}, [stakerInfo]);
+
+
+   
+
+
 
 
 
 const Staking = async()=>{
-   await stake(amount, duration)
+   await stake(amount, 360)
 }
 
  const switchStake = ()=>{
@@ -107,11 +157,15 @@ const Staking = async()=>{
                </div>
 
                <div className=" flex justify-end items-center mt-5">
-               <select onChange={(e)=>setDuration(e.target.value)} className="bg-transparent w-[191px] outline-none ">
-                        <option className=" text-lg font-black bg-black outline-none text-center" >Select Lock Duration</option>
-                        <option value={90} className=" text-lg font-black bg-black outline-none" >90 days 1% FIPCOIN Rewards</option>
-                        <option value={180} className=" text-lg font-black bg-black outline-none" >180 days 1% FIPCOIN Rewards</option>
-                        <option value={360} className=" text-lg font-black bg-black outline-none" >360 days 1% FIPCOIN Rewards</option>
+               <select onChange={(e)=>setDuration(360)} className="bg-transparent w-[191px] outline-none ">
+                        <option value={360} className=" text-lg font-black bg-black outline-none text-center" >See Invest & Rewards </option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >1000-10999 FIPCOIN 1% Reward for 360 days </option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >11000-99999 FIPCOIN 1.5% Reward for 360 days</option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >100000-999999 FIPCOIN 2% Reward for 360 days</option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >1000000-2499999 FIPCOIN 3% Reward for 360 days</option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >2500000-4999999 FIPCOIN 3.5% Reward for 360 days</option>
+                        <option value={360} className=" text-xs font-black bg-black outline-none" >5000000 & Above FIPCOIN 4% Reward for 360 days</option>
+                       
                      </select>
                    </div>
                    <div className=" flex justify-end items-center mt-5">
@@ -168,12 +222,6 @@ const Staking = async()=>{
 
 
 
-
-
-
-
-
-
   
               {
                address ?
@@ -182,13 +230,17 @@ const Staking = async()=>{
                <div className="mt-4 w-full">
                   <div className="w-full my-3 flex justify-between items-center ">
                      <p>Staked Amount </p>
-                     <p>{stakerIn.stake}</p>
+                     <p>
+
+                    
+  {stakerIn?.stake ? Number(stakerIn.stake).toFixed(2) : 'N/A'}
+                     </p>
                   </div>
 
                   <div className="w-full my-3 flex justify-between items-center ">
                      <p>Rewards </p>
                      <p>
-  {stakerIn?.reward ? Number(stakerIn.reward).toFixed(2) : '0.00'}
+  {stakerIn?.reward ? Number(stakerIn.reward).toFixed(2) : 'N/A'}
 </p>
 
                   </div>
@@ -211,30 +263,39 @@ const Staking = async()=>{
 
 
 
-
-
-
-       
-             
-
-
               
-               <div className="bg-black/50 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg h-[320px]  px-4 mt-4 py-6">
+               <div className="bg-black/50 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg h-[380px]  px-4 mt-4 py-6">
                    <h2 className="w-full text-center font-black text-2xl "> Staking Rewards</h2>
                    <div className="mt-4 w-full">
                       <div className="w-full my-3 flex justify-between items-center ">
-                         <p>90 Days </p>
-                         <p>1% FIPCOIN Rewards</p>
+                         <p>1000-10999 </p>
+                         <p>1% Rewards</p>
                       </div>
 
                       <div className="w-full my-3 flex justify-between items-center ">
-                         <p>180 Days </p>
-                         <p>1% FIPCOIN Rewards</p>
+                         <p>11000-99999 </p>
+                         <p>1.5% Rewards</p>
                       </div>
 
                       <div className="w-full my-3 flex justify-between items-center ">
-                         <p>360 Days </p>
-                         <p>1% FIPCOIN Rewards</p>
+                         <p>100000-999999 </p>
+                         <p>2% Rewards</p>
+                      </div>
+
+                      <div className="w-full my-3 flex justify-between items-center ">
+                         <p>1000000-2499999  </p>
+                         <p>3% Rewards</p>
+                      </div>
+
+
+                      <div className="w-full my-3 flex justify-between items-center ">
+                         <p>2500000-4999999  </p>
+                         <p>3.5% Rewards</p>
+                      </div>
+
+                      <div className="w-full my-3 flex justify-between items-center ">
+                         <p>5000000 & Above  </p>
+                         <p>4% Rewards</p>
                       </div>
                        
                        <div className="mt-4 h-[2px] bg-white ">

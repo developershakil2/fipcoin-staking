@@ -25,7 +25,7 @@ if(!context){
    throw new Error("error from buy context")
 }
 const { isLoad, resMessage, setResMessage,buyToken } = context;
-const tokenPrice = 0.95;
+const tokenPrice = 0.90;
 
 
 
@@ -112,7 +112,7 @@ const buyTokenFunc = (e:any)=>{
 
                     <div className="">
                    
-                   <input value={amount} disabled className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#FFD77B] rounded-xl py-3 px-4 font-black text-3xl"  placeholder="0.0"/>
+                   <input value={amount?.toFixed(2)} disabled className=" w-[120px] md:w-[140px] outline-none bg-transparent border-[#FFD77B] rounded-xl py-3 px-4 font-black text-3xl"  placeholder="0.0"/>
                 </div>
 
                 <div className="border-[#FFD77B] w-[130px] border-[2px] flex justify-center items-center text-[#FFD77B] font-black py-2 px-5 rounded-lg">

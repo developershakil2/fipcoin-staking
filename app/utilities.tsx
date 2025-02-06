@@ -11,9 +11,10 @@ interface ContextProps{
     children:ReactNode
 }
 
+// https://rpc.ankr.com/bsc
 
 const ContextComponent = ({children}:ContextProps)=>{
-    const contractAddress = '0xb0953c42d9d7A430D72c5e2756c96bAAcCF921b1'
+    const contractAddress = '0x817aCe112B48a372e032f415D54Da6F1C29f4424'
      const tokenAddress = '0x3F885D6a9737A0649574dA3693E54F74eB1FAC53'
      const abi = ABI;
     const [openNav, setOpenNav] = useState<any>('-9999%')
@@ -30,6 +31,7 @@ const buyToken = async(amount:number)=>{
   try{
    setIsLoad(true);
    const usdt = '0x55d398326f99059fF775485246999027B3197955'
+    
 
    if(amount <= 0){
     setResMessage("please insert a valid amount of tokens");
@@ -107,20 +109,8 @@ const stake = async (amount: number, lockPeriod: string) => {
 
     const amountInFormat = ethers.utils.parseEther(String(amount));
 
-    let selectedLockPeriod: number;
-    switch (lockPeriod) {
-      case '90':
-        selectedLockPeriod = 90; // ✅ Matches smart contract
-        break;
-      case '180':
-        selectedLockPeriod = 180; // ✅ Matches smart contract
-        break;
-      case '360':
-        selectedLockPeriod = 360; // ✅ Matches smart contract
-        break;
-      default:
-        throw new Error('Invalid lock period selected');
-    }
+    let  selectedLockPeriod:any = 360; // ✅ Matches smart contract
+     
     
     // Approve tokens first
     const approvalTxHash = await writeContractAsync({
@@ -171,10 +161,12 @@ const stake = async (amount: number, lockPeriod: string) => {
       if (revertMessageMatch && revertMessageMatch[1]) {
         setResMessage(revertMessageMatch[1]); 
       } else {
-        setResMessage(error.message); 
+        setIsLoad(false)
+        setResMessage( "Staking transaction failed")
       }
     } else {
-      setResMessage("Unexpected error occurred"); 
+      setResMessage( "Staking transaction failed")
+
     }
     setIsLoad(false); 
   }
@@ -215,7 +207,8 @@ const unstake = async () => {
             setResMessage(revertMessageMatch[1]); 
             setIsLoad(false)
           } else {
-            setResMessage(error.message); 
+            setResMessage( "Unstake transaction failed")
+
             setIsLoad(false)
           }
         } 
@@ -265,7 +258,8 @@ const unstake = async () => {
             setResMessage(revertMessageMatch[1]); 
             setIsLoad(false)
           } else {
-            setResMessage(error.message); 
+            setResMessage( "Early Withdraw transaction failed")
+
             setIsLoad(false)
           }
         } 
@@ -352,11 +346,11 @@ useEffect(() => {
 
       setStakerInfo(stakers);
 
-      // Convert the values properly
+    
       setStakerIn({
         stake: ethers.utils.formatUnits(stakers.stakedAmount, 18),  // Convert based on token decimals (assuming 18)
         reward: ethers.utils.formatUnits(stakers.rewardAmount, 18), // Convert based on token decimals (assuming 18)
-        lock: (stakers.lockPeriod.toNumber() / 86400).toFixed(2),   // Convert seconds to days
+        lock: (Number(stakers.lockPeriod) / 86400).toFixed(2),   // Convert seconds to days
         remaining: (stakers.timeRemaining.toNumber() / 86400).toFixed(2),  // Convert seconds to days
       });
     } catch (error) {
@@ -385,7 +379,8 @@ console.log(stakerIn, 'data')
             resMessage,
             setResMessage,
             stakerIn,
-            buyToken
+            buyToken, 
+            stakerInfo
             
 
 

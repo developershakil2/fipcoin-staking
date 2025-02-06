@@ -17,5 +17,6 @@ export interface ConType{
     setIsLoad:Dispatch<SetStateAction <boolean>>;
     stakerIn:any;
     buyToken:(amount:any)=> Promise<void>;
+    stakerInfo:any
 
 }
